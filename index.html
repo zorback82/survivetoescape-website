@@ -24,8 +24,7 @@
   <body>
       <div id="header">
         <nav>
-          <li class="fork"><a href="" onClick="alert('La changelog est non disponible pour le moment');">Changelog V2.0</a></li>
-
+          <li class="fork"><a href="changelogv2.html">Changelog V2.0</a></li>
         </nav>
       </div><!-- end header -->
 
@@ -39,6 +38,11 @@
           <span class="credits left">Project maintained and developped by <a href="https://twitter.com/_zorback">ZorBack</a></span>
           <span class="credits right">Un projet de Moustic et de ZorBack</span>
         </div>
+
+        <!-- Section pour afficher la prochaine édition Survive To Escape -->
+        <h2 id="welcome-to-github-pages">Prochaine édition de Survive To Escape :</h2>
+        <h3 style="margin-bottom:50px;" id="countdown">10/10/2020 à 21h45</h3>
+
 
         <h2 id="welcome-to-github-pages">C'est quoi ce mode de jeu ?</h2>
 
@@ -89,5 +93,34 @@
 
 
 
+    <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Oct 10, 2020 21:45:00").getTime();
 
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the element with id="countdown"
+      document.getElementById("countdown").innerHTML = days + " jours " + hours + " h "
+      + minutes + " min " + seconds + " sec " + "// le 10 octobre 2020 à 21h45";
+
+      // If the count down is finished, write some text
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "C'est parti pour Survive To Escape ! En live sur twitch.tv/moustic";
+      }
+    }, 1000);
+    </script>
 </body></html>
